@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { api } from 'https://golf-courses-api.herokuapp.com/courses'
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path : }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
