@@ -1,5 +1,5 @@
 import { PlayComponent } from './../components/play/play.component';
-import { CoursesComponent } from './../components/courses/courses.component';
+import { CoursesComponent } from '../components/course/courses.component';
 import { WelcomeComponent } from './../components/welcome/welcome.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
