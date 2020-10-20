@@ -4,11 +4,11 @@ import { Course } from '../interfaces/course';
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
-  course: Course[] = [
+export class CoursesService {
+  courses: Course[] = [
     {id: '1', name: 'Add Your Players'},
-    {id: '2', name: 'Choose your difficulty'},
-    // {id: '3', name: 'Finance'},
+    {id: '2', name: 'Choose Your Difficulty'},
+    {id: '3', name: 'Start New Game '},
 ];
 
 

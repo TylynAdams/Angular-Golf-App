@@ -1,1 +1,18 @@
-<p>play works!</p>
+<div class="main-container">
+  <div class="cards">
+      <h2>{{course.name}}</h2>
+
+      <mat-card>
+        <mat-form-field>
+            <input matInput [formControl]="playerNameFC" placeholder="Player Name" type="text">
+            <mat-error *ngIf="playerNameFC.hasError('duplicate')">Duplicate Name</mat-error>
+        </mat-form-field>
+
+        <button mat-mini-fab color="primary" (click)="addPlayer()" [disabled]="playerNameFC.invalid">
+          <mat-icon>add</mat-icon>
+      </button>
+
+      <div>{{players | json}}</div>
+    </mat-card>
+  </div>
+</div>
