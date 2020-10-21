@@ -16,6 +16,10 @@ export class PlayComponent implements OnInit {
     playerNameFC = new FormControl('', this.nameValidator());
     players: Player[] = [];
     playerId = 0;
+    // Might need to take this out too
+    weekdays: string[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +30,7 @@ export class PlayComponent implements OnInit {
     this.courses = this.coursesService.courses;
     this.course = this.courses.find(course => course.id === this.route.snapshot.params['id']);
 }
+// Might need to be changed
 addPlayer(): void {
   if (this.playerNameFC.value) {
       this.playerId++;
@@ -34,8 +39,14 @@ addPlayer(): void {
           id: this.playerId.toString(),
           courseId: this.course.id,
           name: this.playerNameFC.value,
-          // below might cause some problems
           score: Math.floor(Math.random() * 50) + 50,
+          monday: 0,
+          tuesday: 0,
+          wednesday: 0,
+          thursday: 0,
+          friday: 0,
+          saturday: 0,
+          sunday: 0
       });
 
       this.playerNameFC.setValue('');
@@ -54,6 +65,15 @@ nameValidator(): ValidatorFn {
       }
       return error;
   };
+}
+// might change
+getTotalHours(player: Player): number {
+  return player.monday + player.tuesday + player.wednesday
+      + player.thursday + player.friday + player.saturday + player.sunday;
+}
+
+deletePlayer(index: number): void {
+  this.players.splice(index, 1);
 }
 
 
