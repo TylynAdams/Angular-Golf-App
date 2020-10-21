@@ -1,9 +1,21 @@
-<div class="main-container">
+<!-- <div class="main-container">
   <mat-card>
       <mat-tab-group mat-align-tabs="center">
-          <mat-tab label="Customer Success"></mat-tab>
-          <mat-tab label="Sales"></mat-tab>
-          <mat-tab label="Finance"></mat-tab>
+        <mat-label>Choose a Golf Course</mat-label>
+        <mat-select>
+          <mat-option *ngFor='let course of courses' [value]='course.value'>
+            {{course.value}}
+          </mat-option>
+        </mat-select>
       </mat-tab-group>
   </mat-card>
-</div>
+</div> -->
+<h4>Choose a Golf Course</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Golf Courses</mat-label>
+        <mat-select>
+          <mat-option *ngFor='let course of courses' [value]='course.value'>
+            {{course.viewValue}}
+          </mat-option>
+        </mat-select>
+</mat-form-field>
